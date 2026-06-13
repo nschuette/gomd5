@@ -61,6 +61,11 @@ func openUrl(url string) (io.ReadCloser, error) {
 		return nil, err
 	}
 
+	if resp.StatusCode != http.StatusOK {
+		resp.Body.Close()
+		return nil, fmt.Errorf("bad status: %s", resp.Status)
+	}
+
 	return resp.Body, nil
 }
 
