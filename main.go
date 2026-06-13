@@ -12,7 +12,7 @@ import (
 
 func init() {
 	flag.Usage = func() {
-		fmt.Fprintf(os.Stderr, "Usage: gomd5 <file|url>)")
+		fmt.Fprintf(os.Stderr, "Usage: gomd5 <file|url>")
 	}
 }
 
